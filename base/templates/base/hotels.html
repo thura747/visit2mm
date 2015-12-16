@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="http://www.visit2mm.com.sg/hotels/static/searchcontrols/css/search-controls-0-1-150.css">
+<div class="wrap clearfix">
+    <div id="home-content">
+
+
+<!--[if lte IE 9]> <form id="search-form" class="no-custom-dropdown"> <![endif]-->
+<!--[if gte IE 10]> <form id="search-form" > <![endif]-->
+<!--[if !(IE)]><!--> <form id="search-form"> <!--<![endif]-->
+    <input type="hidden" disabled="disabled" value="/hotels/s/" name="urldis" id="urldis">
+    <input type="hidden" disabled="disabled" value="/hotels/q/" name="urlres" id="urlres">
+
+  <div class="message_wrap">
+      <p class="message">
+          <span class="error" id="empty-destination-box">Please enter a destination or hotel name.</span>
+          <span class="error" id="long-stay-box">Sorry, We don't support stays longer than 30 nights.</span>
+      </p>
+  </div>
+
+  <div class="destination">
+      <label>Find hotel deals</label>
+      <div class="input-holder">
+          <input type="text" value="" placeholder="Enter destination or hotel name" tabindex="1" id="q" name="q" autocomplete="off">
+          <a class="hidden" id="clear-search"></a>
+      </div>
+  </div>
+
+
+  <div class="hbox group">
+
+      <div class="hbox dates">
+          <input type="hidden" disabled="disabled" value="2015-12-06" name="sd-sc" id="sd-sc">
+          <input type="hidden" disabled="disabled" value="2015-12-07" name="ed-sc" id="ed-sc">
+          <div class="group checkin">
+              <label data-icon="calendarLarge after" for="sd-placeholder">
+                 Check-in
+                  <input type="text" readonly="readonly" value="2015-12-06" tabindex="2" id="sd-placeholder">
+                  <input type="hidden" name="sd" id="sd" value="2015-12-06">
+              </label>
+          </div>
+          <div class="group checkout">
+              <label data-icon="calendarLarge after" for="ed-placeholder">
+                 Check-out
+                  <input type="text" readonly="readonly" value="2015-12-07" tabindex="3" id="ed-placeholder">
+                  <input type="hidden" name="ed" id="ed" value="2015-12-07">
+              </label>
+          </div>
+      </div>
+
+      <div class="hbox accommodation">
+          <div class="guests">
+              <label>Guests</label>
+              <select tabindex="4" name="na" id="na">
+                <option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option>
+              </select>
+          </div>
+          <div class="rooms">
+              <label>Rooms</label>
+              <select tabindex="5" name="nr" id="nr">
+                <option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+              </select>
+          </div>
+      </div>
+
+      <div class="group submit">
+          <button type="button" class="wc-button" id="submit-search">
+              <span aria-hidden="true" role="presentation" class="wc-button-point"></span>
+              <span class="wc-button-text">Search</span>
+          </button>
+      </div>
+
+  </div>
+
+  <input type="hidden" value="" id="query_id" name="bpt_eid">
+  <input type="hidden" value="" id="fhids" name="fhids">
+
+</form>
+
+<a class="feature-img-att" href="#" data-query="Dar Al Masyaf, Madinat Jumeirah, Dubai, United Arab Emirates" id="imgAtt"><span>Dar Al Masyaf, Madinat Jumeirah, Dubai</span> by Jumeirah Hotels &amp; Resorts</a>
+
+<div class="search-bg" id="searchBG"></div>
+    </div>
+    </div>

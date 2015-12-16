@@ -1,0 +1,190 @@
+{% extends "_layouts/base.html" %}
+
+{% block css %}
+{{block.super}}
+<style>
+/* Move down content because we have a fixed navbar that is 50px tall */
+    body {
+      padding-top: 50px;
+      padding-bottom: 20px;
+    }
+    .nav-tabs {
+        border-bottom: None;
+    }
+    #secondary-nav {
+        display: block;
+        float: right;
+        position: relative;
+    }
+    #secondary-nav .secondary-nav-items {
+        margin: 0;
+    }
+    #secondary-nav ol, ul {
+        list-style: outside none none;
+    }
+
+    .navbar-header {
+        width: 100%;
+    }
+
+
+#header #secondary-nav li#trip-planning-nav {
+    border-right: 1px solid #5d5e64;
+    display: block;
+}
+#header #secondary-nav li {
+    float: left;
+    line-height: 19px;
+    list-style-type: none;
+    margin: 0;
+    position: relative;
+}
+
+    #header #secondary-nav li#culture-info {
+    border: 1px solid #5be2ed;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    height: 18px;
+    margin: 0 2px;
+}
+#header #secondary-nav li {
+    float: left;
+    line-height: 19px;
+    list-style-type: none;
+    margin: 0;
+    position: relative;
+}
+
+</style>
+{% endblock css %}
+
+{% block page_title %}visit2mm - Home{% endblock %}
+{% block page_class %}home-page{% endblock %}
+
+{% block header %}
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navjdigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand visit2mm-logo" href="/" title="Cheap Flights with visit2mm">visit2mm</a>
+                    <div id="secondary-nav">
+                        <ul class="secondary-nav-items clearfix list-inline">
+                            <li class="trip-planning-nav-mobile-refresh" id="trip-planning-nav">
+                                <span title="Recent searches" class="history-toggle-mobile-refresh" id="history-toggle">Recent searches</span>
+                            </li>
+                            <li class="help-link des">
+                                <a href="https://hotelshelp.visit2mm.net/hc/en-gb/?skyDBG=2" target="_blank" id="ss-header-links-faq">Help</a>
+                            </li>
+
+                            <li class="culture-info clearfix" id="culture-info">
+                                <img title="SG" alt="Singapore" src="http://images.skyscnr.com/images/country/flag/header/sg.png" id="culture-flag-image">
+
+                                <span class="culture-currency-info">$ SGD <span>▼</span></span>
+                                <span class="culture-additional-info">English (EN) SGD - $ Change <span class="toggle-indicator">▼</span></span>
+                            </li>
+                            <li class="desktop-nav-only desktop-last" id="login-button-container">
+                                <a class="login" id="authentication-link">Log in</a>
+                                <span class="login-caret"></span>
+                            </li>
+
+                            <li>
+                                <a class="account-controls-init hidden">
+                                    Account
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+            </div>
+            <div data-role="tabs" id="tabs" style="padding-top: 50px;">
+                <div data-role="navbar">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#flights" data-toggle="tab"><span class="glyphicon glyphicon-home"></span>Flights</a></li>
+                        <li><a href="#hotels" data-toggle="tab"><span class="glyphicon glyphicon-home"></span> Hotels</a></li>
+                        <li><a href="#cars" data-toggle="tab"><span class="glyphicon glyphicon-home"></span> Cars</a></li>
+                        <!--<li class="dropdown">-->
+                            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>-->
+                            <!--<ul class="dropdown-menu">-->
+                                <!--<li><a href="#tabs-1">Action</a></li>-->
+                                <!--<li><a href="#tabs-2">Another action</a></li>-->
+                                <!--<li><a href="#tabs-3">Something else here</a></li>-->
+                                <!--<li class="divider"></li>-->
+                                <!--<li class="nav-header">Nav header</li>-->
+                                <!--<li><a href="#">Separated link</a></li>-->
+                                <!--<li><a href="#">One more separated link</a></li>-->
+                            <!--</ul>-->
+                        <!--</li>-->
+                        <!--<li><a href="./navbar.html">Default</a></li>-->
+                        <!--<li><a href="./navbar-static-top.html">Static top</a></li>-->
+                        <!--<li><a href="./navbar-fixed-top.html">Fixed top</a></li>-->
+
+
+                    </ul>
+                </div>
+            </div><!--/.nav-collapse -->
+        </div>
+
+
+    </div>
+{% endblock %}
+
+
+{% block content %}
+<!-- This code is taken from http://getbootstrap.com/examples/jumbotron/ -->
+
+
+    <div class="tab-content">
+        <div id="flights" class="tab-pane active">
+            <div class="jumbotron">
+                <div class="container">
+                    {% include "base/flights.html" %}
+                </div>
+            </div>
+        </div>
+
+        <div id="hotels" class="tab-pane">
+            <div class="jumbotron">
+                <div class="container">
+                    {% include "base/hotels.html" %}
+                </div>
+            </div>
+        </div>
+
+        <div id="cars" class="tab-pane">
+            <div class="jumbotron">
+                <div class="container">
+                    {% include "base/cars.html" %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Heading</h2>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Heading</h2>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Heading</h2>
+                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

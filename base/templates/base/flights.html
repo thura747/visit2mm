@@ -1,0 +1,113 @@
+<style>
+
+    #sidebar {
+    float: right;
+    margin: 32px 0 0;
+    width: 300px;
+}
+.label, article, aside, details, figcaption, figure, footer, h1, header, hgroup, label, menu, nav, section {
+    display: block;
+}
+</style>
+<div class="wrap clearfix">
+    <div id="home-content">
+        <section class="search-controls  tap-targets-a1" id="js-search-controls-container">
+            <form class="clearfix">
+                <fieldset class="search-controls-trip-type multi-city-enabled" id="js-trip-type">
+                    <input type="radio" checked="checked" tabindex="1" class="visuallyhidden" value="return" name="trip-type" id="js-is-return-input">
+                    <label class="return-trip checked" for="js-is-return-input">Return</label>
+                    <input type="radio" tabindex="1" class="visuallyhidden" value="one-way" name="trip-type" id="js-one-way-input">
+                    <label class="one-way-trip " for="js-one-way-input">One way</label>
+                    <input type="radio" tabindex="1" class="visuallyhidden" value="multi-destination" name="trip-type" id="js-multi-city-input">
+                    <label class="multi-city-trip " for="js-multi-city-input">Multi-city</label>
+                </fieldset>
+                <section class="traditional-search clearfix">
+                    <fieldset class="search-controls-places" id="js-places">
+                        <button class="map-button" id="js-map-link" type="button">map</button>
+                        <div class="origin-place" style="direction: ltr;">
+                            <label class="place-label" for="js-origin-input">From</label>
+                            <input type="text" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off" tabindex="1" id="js-origin-input" class="tt-input" style="position: relative; vertical-align: top;" dir="auto">
+                            <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: arial,helvetica,clean,sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre>
+                            <span class="tt-dropdown-menu" style="position: absolute; left: 0px; z-index: 100; display: none; right: auto;">
+                                <div class="tt-dataset-origin"></div>
+                            </span>
+                            <span class="origin-place-icon"></span>
+                            <label class="place-summary" for="js-origin-input" id="js-origin-summary">SG</label>
+                            <label class="nearby-alts sc-checkbox ">
+                                <input type="checkbox" class="visuallyhidden" id="js-outbound-alts">
+                                <span>Add nearby airports</span>
+                            </label>
+                        </div>
+                        <button title="Click here to swap locations" class="swap-button" id="js-places-toggle" type="button">
+                            <span class="visuallyhidden">Click here to swap locations</span>
+                        </button>
+                        <div class="destination-place" style="direction: ltr;">
+                            <label class="place-label" for="js-destination-input">To</label>
+                            <input type="text" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off" tabindex="1" placeholder="Enter a country, city or airport" id="js-destination-input" class="tt-input" style="position: relative; vertical-align: top;" dir="auto">
+                            <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: arial,helvetica,clean,sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre>
+                            <span class="tt-dropdown-menu" style="position: absolute; left: 0px; z-index: 100; display: none; right: auto;">
+                                <div class="tt-dataset-destination"></div>
+                            </span>
+                            <span class="destination-place-icon"></span>
+                            <label class="place-summary" for="js-destination-input" id="js-destination-summary"></label>
+                            <label class="nearby-alts sc-checkbox ">
+                                <input type="checkbox" class="visuallyhidden" id="js-inbound-alts">
+                                <span>Add nearby airports</span>
+                            </label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="search-controls-dates" id="js-dates">
+                        <legend class="visuallyhidden">Dates</legend>
+                        <div class="depart">
+                            <label for="js-depart-input">Depart</label>
+                            <input type="text" readonly="" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off" tabindex="1" value="06/12/2015" id="js-depart-input">
+                        </div>
+                        <div class="return ">
+                            <label for="js-return-input">Return</label>
+                            <input type="text" readonly="" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off" tabindex="1" value="07/12/2015" id="js-return-input">
+                        </div>
+                        <span class="date-summary" id="js-depart-summary">Sun, 06 Dec 2015</span>
+                        <span class="date-summary" id="js-return-summary">Mon, 07 Dec 2015</span>
+                    </fieldset>
+                    <fieldset class="search-controls-pax-cabin-class" id="js-pax-cabin-class">
+                       <legend>Cabin Class &amp; Travellers</legend>
+                        <button tabindex="1" class="cabin-class-travellers-trigger" id="js-trad-cabin-class-travellers-toggle" type="button">
+                            <span class="down-arrow">▼</span>
+                            <span class="adult-icon"></span>
+                            <span>1 adult,</span>
+                            <span>Economy</span>
+                        </button>
+                    </fieldset>
+                    <label class="sc-checkbox prefer-directs ">
+                        <input type="checkbox" tabindex="1" class="visuallyhidden" id="js-prefer-directs">Direct flights only
+                    </label>
+                    <fieldset class="compare-units"></fieldset></section>
+                <section class="search-controls-multi-city clearfix" style="display: none;"><ol class="multi-city-routes" id="js-multi-city-routes"></ol>
+                    <button tabindex="1" class="add-route-button " id="js-add-multi-city-route" type="button">
+                        <span class="route-add-icon"></span>
+                        <span>Add another flight</span>
+                    </button>
+                    <button tabindex="1" class="cabin-class-travellers-trigger" id="js-multi-cabin-class-travellers-toggle" type="button"><span class="down-arrow">▼</span>
+                        <span class="adult-icon"></span>
+                        <span>1 adult,</span>
+                        <span>Economy</span>
+                    </button>
+                </section>
+                <button tabindex="1" type="button" class="wc-button-large wc-button-spinner" id="js-search-button">
+                    <span aria-hidden="true" role="presentation" class="wc-button-point"></span>
+                    <span class="wc-button-text">Search flights</span>
+                </button>
+            </form>
+        </section>
+    </div>
+    <aside id="sidebar">
+        <div class="mpu-advert">
+            <div id="mpu-ext-ed">
+                <div id="google_ads_iframe_/24268069/visit2mm.com.sg/home_page_0__container__" style="border: 0pt none;">
+                    <iframe width="300" height="250" frameborder="0" id="google_ads_iframe_/24268069/visit2mm.com.sg/home_page_0" name="google_ads_iframe_/24268069/visit2mm.com.sg/home_page_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" src="javascript:&quot;&lt;html&gt;&lt;body style='background:transparent'&gt;&lt;/body&gt;&lt;/html&gt;&quot;"></iframe>
+                </div>
+                <iframe width="0" height="0" frameborder="0" id="google_ads_iframe_/24268069/visit2mm.com.sg/home_page_0__hidden__" name="google_ads_iframe_/24268069/visit2mm.com.sg/home_page_0__hidden__" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom; visibility: hidden; display: none;" src="javascript:&quot;&lt;html&gt;&lt;body style='background:transparent'&gt;&lt;/body&gt;&lt;/html&gt;&quot;"></iframe>
+            </div>
+        </div>
+    </aside>
+</div>
